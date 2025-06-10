@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <omp.h>
 
 
 double CalcPi(int n);
@@ -43,15 +44,19 @@ int main(int argc, char **argv)
         return 1;
     }
     
-    // get initial time 
+    // Medir tiempo de ejecución
+    fTimeStart = omp_get_wtime();
 
     /* the calculation is done here*/
     fPi = CalcPi(n);
 
+    fTimeEnd = omp_get_wtime();
+    double walltime = fTimeEnd - fTimeStart;
+
     //get final fime
-    
     printf("\npi is approximately = %.20f \nError               = %.20f\n",
            fPi, fabs(fPi - fPi25DT));
+    printf("Tiempo de ejecución: %.6f segundos\n", walltime);
     
     // report time
 

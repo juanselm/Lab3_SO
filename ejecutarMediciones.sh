@@ -3,6 +3,9 @@
 # Script para realizar mediciones automáticas del cálculo de Pi
 # Ejecuta 30 mediciones para cada configuración de hilos (2, 4, 8, 16)
 
+# Borrar ejecutable previo si existe
+[ -f pi2 ] && rm pi2
+
 # Compilar el programa
 echo "Compilando programa..."
 #gcc -fopenmp -O2 -o pi_parallel pi_parallel.c -lm
@@ -17,8 +20,8 @@ fi
 THREADS=(2 4 8 16)
 MEDICIONES=30
 
-# Crear directorio para resultados
-mkdir -p resultados
+# Crear directorio para resultados solo si no existe
+[ ! -d resultados ] && mkdir resultados
 
 echo "Iniciando mediciones..."
 echo "Cada configuración realizará $MEDICIONES mediciones"
