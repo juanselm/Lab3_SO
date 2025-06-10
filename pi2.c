@@ -14,7 +14,7 @@ double f(double a);
 
 int main(int argc, char **argv)
 {
-    int n = 1500000000;  // Valor representativo según el enunciado
+    int n = 2000000000;  // Valor representativo según el enunciado
     const double fPi25DT = 3.141592653589793238462643;
     double fPi;
     double fTimeStart, fTimeEnd, walltime;

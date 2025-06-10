@@ -1,0 +1,4 @@
+# Ignorar archivos binarios y resultados de mediciones
+/resultados/
+/pi
+/pi2
