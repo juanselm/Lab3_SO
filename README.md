@@ -57,7 +57,7 @@ chmod +x ejecutarMediciones.sh
 ```
 
 ## Parámetros del experimento
-- **Valor de n**: 1,500,000,000 (según especificaciones del proyecto)
+- **Valor de n**: 20,000,000,000 (según especificaciones del proyecto)
 - **Configuraciones de hilos**: 2, 4, 8, 16
 - **Mediciones por configuración**: 30 (para significancia estadística)
 - **Método de paralelización**: OpenMP con `#pragma omp parallel for`
